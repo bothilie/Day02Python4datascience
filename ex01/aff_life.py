@@ -8,7 +8,12 @@ from load_csv import load
 #tester
 
 def aff_life():
-    data = pd.read_csv("life_expectancy_years.csv")
+    aff_life.__doc__="load a csv file and display a graph"
+    data = load("life_expectancy_years1.csv")
+    if data.empty == True:
+        print("No data")
+        return(None)
+    nb_rows= data.shape[1]
     data = data.set_index("country")
     print(data[data.index == 'France'])
     data_fr = data[data.index == 'France'].squeeze()
@@ -16,12 +21,14 @@ def aff_life():
     dfxy = pd.DataFrame(
     data={
         "life_expectancy": data_fr.values,},
-    index=[1800 + i for i in range(0, 301)])
+    index=[1800 + i for i in range(0, nb_rows-1)])
     dfxy.ylabel = "life expectancy"
-    dfxy.plot(title="life expectancy in France between 1800 and 2101",
+    dfxy.plot(title="France Life expectancy Projections",
+    xlabel="Year",
+    ylabel="life expectancy",
     figsize=(8, 6),
     fontsize=16,
-    xlim=(1800, 2101))
+    xlim=(1800, 1800+nb_rows))
 
     plt.show()
 

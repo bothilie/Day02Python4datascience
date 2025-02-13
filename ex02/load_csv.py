@@ -1,10 +1,9 @@
 import pandas
 
 #print l'ouput dans la fonction?
-#tester avec des valeurs nulles
 
 def load(path: str) -> []:
-    try:
+    #try:
         data = pandas.read_csv(path)
         nb_col = data[data.columns[0]].count()
         nb_col = data.shape[0]
@@ -12,6 +11,6 @@ def load(path: str) -> []:
         output = f"Loading dataset of dimensions ({nb_col},{nb_rows})"
         print(output)
         return(data)
-    except:
-        AssertionError("")
-        return(pandas.DataFrame())
+    #except:
+    #    AssertionError("")
+    #    return(pandas.DataFrame())

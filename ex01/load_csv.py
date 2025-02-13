@@ -13,4 +13,4 @@ def load(path: str) -> []:
         return(data)
     except:
         AssertionError("")
-        return(None)
+        return(pandas.DataFrame())
