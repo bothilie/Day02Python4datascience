@@ -5,7 +5,7 @@ from load_csv import load
 
 #automatiser l'indexation
 #automatiser le pays
-#tester
+#tester: quelles erreurs puisque c'est un pg ?
 
 def aff_life():
     aff_life.__doc__="load a csv file and display a graph"
