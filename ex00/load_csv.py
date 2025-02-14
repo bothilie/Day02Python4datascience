@@ -4,6 +4,7 @@ import pandas
 #tester avec des valeurs nulles
 
 def load(path: str) -> []:
+    load.__doc__ = "load a csv file and return its data"
     try:
         data = pandas.read_csv(path)
         nb_col = data[data.columns[0]].count()
@@ -15,3 +16,6 @@ def load(path: str) -> []:
     except:
         AssertionError("")
         return(pandas.DataFrame())
+
+if __name__ == "__main__":
+    load()
